@@ -1,0 +1,20 @@
+<resources>
+	<string name="app_name" translatable="false">WaveWeb App</string>
+	<string name="settings_name">Settings</string>
+	<string name="app_poweredby">Powered by ISnow WaveWeb</string>
+	<string name="app_branding" translatable="false">WaveWeb App</string>
+	<string name="app_loading">Now loading...</string>
+	<string name="version_geckoview">GeckoView Version: %s</string>
+	<string name="version_geckoview_channel">GeckoView Release Channel: %s</string>
+	<string name="version_name">Version</string>
+	<string name="version_rights">Rights notation</string>
+	<string name="version_terms">Terms of Service</string>
+	<string name="version_app">%s version: %v</string>
+	<string name="version_app_right" translatable="false">Copyright (C) 2022 Developer</string>
+	<string name="settings_isnaccount">ISnow Network Account</string>
+	<string name="settings_isnaccount_datasync">Data Sync</string>
+	<string name="settings_language">Language</string>
+	<string name="settings_account_signin">Signin</string>
+	<string name="settings_account_signup">Signup</string>
+	<string name="settings_account_signout">Signout</string>
+</resources>

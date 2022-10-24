@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>Gradle Build Information Savedata</comment>
+    <entry key="appPackage">jp.isnow.waveweb</entry>
+    <entry key="geckoViewChannel">release</entry>
+    <entry key="appMinimumAPI">25</entry>
+    <entry key="versionCode">4</entry>
+    <entry key="appCompileAPI">32</entry>
+    <entry key="releaseChannel">fehu</entry>
+    <entry key="geckoViewVersion">106.0.20221019185550</entry>
+    <entry key="versionPatch">1</entry>
+    <entry key="versionBuild">3</entry>
+    <entry key="versionMajor">0</entry>
+    <entry key="versionMinor">99</entry>
+    <entry key="appTargetAPI">32</entry>
+</properties>

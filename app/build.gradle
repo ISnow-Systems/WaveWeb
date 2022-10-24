@@ -1,0 +1,56 @@
+plugins {
+	id 'com.android.application'
+}
+
+Properties appProperties = new Properties()
+appProperties.loadFromXML(file("build.info.xml").newInputStream())
+appProperties.setProperty("versionBuild", ((new Integer(appProperties.getProperty("versionBuild", "0"))) + 1).toString())
+appProperties.setProperty("versionCode", ((new Integer(appProperties.getProperty("versionCode", "1"))) + 1).toString())
+appProperties.storeToXML(file("build.info.xml").newOutputStream(), "Gradle Build Information Savedata")
+
+android {
+	namespace appProperties.getProperty("appPackage", 'jp.isnow.waveweb')
+	compileSdk(new Integer(appProperties.getProperty("appCompileAPI", "32")))
+
+	defaultConfig {
+		applicationId appProperties.getProperty("appPackage", 'jp.isnow.waveweb')
+		minSdk(new Integer(appProperties.getProperty("appMinimumAPI", "24")))
+		targetSdk(new Integer(appProperties.getProperty("appTargetAPI", "32")))
+		versionCode(new Integer(appProperties.getProperty("versionCode", "1")))
+		versionName "${appProperties.getProperty("versionMajor", "0")}.${appProperties.getProperty("versionMinor", "99")}.${appProperties.getProperty("versionPatch", "1")}.${appProperties.getProperty("versionBuild", "0")}-${appProperties.getProperty("releaseChannel", "fehu")}"
+
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	}
+
+	applicationVariants.all { variant ->
+		variant.resValue "string", "app_version_value", variant.versionName
+		variant.resValue "string", "geckoview_version", geckoviewVersion
+		variant.resValue "string", "geckoview_channel", geckoviewChannel
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_11
+		targetCompatibility JavaVersion.VERSION_11
+	}
+}
+
+ext {
+	geckoviewChannel = appProperties.getProperty("geckoViewChannel", "release")
+	geckoviewVersion = appProperties.getProperty("geckoViewVersion", "106.0.20221019185550")
+}
+
+dependencies {
+	implementation "org.mozilla.geckoview:geckoview${geckoviewChannel == "release" ? "" : "-".concat(geckoviewChannel)}:${geckoviewVersion}"
+	implementation 'androidx.appcompat:appcompat:1.5.1'
+	implementation 'com.google.android.material:material:1.7.0'
+	implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+	testImplementation 'junit:junit:4.13.2'
+	androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+	androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

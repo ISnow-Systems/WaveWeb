@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="settings_name">設定</string>
+	<string name="app_poweredby">Powered by ISnow WaveWeb</string>
+	<string name="app_loading">読み込み中…</string>
+	<string name="version_geckoview">GeckoView バージョン: %s</string>
+	<string name="version_geckoview_channel">GeckoView リリース・チャネル: %s</string>
+	<string name="version_name">Version</string>
+	<string name="version_rights">権利表記</string>
+	<string name="version_terms">利用規約</string>
+	<string name="version_app">%s バージョン: %v</string>
+	<string name="settings_isnaccount">ISN アカウント</string>
+	<string name="settings_isnaccount_datasync">データ同期</string>
+	<string name="settings_language">言語 / Language</string>
+	<string name="settings_account_signin">サインイン</string>
+	<string name="settings_account_signup">登録</string>
+	<string name="settings_account_signout">サインアウト</string>
+</resources>
